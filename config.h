@@ -73,10 +73,10 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_Left,   shiftview,      {.i = -1 } },
 	{ MODKEY,                       XK_Right,  shiftview,      {.i = +1 } },
-	{ MODKEY,                       XK_F11,    spawn,          CMD("amixer -q sset Master 5%- && pkill dwm_bar.sh && /home/archuser/Downloads/dwm-bar/dwm_bar.sh") },
+	{ MODKEY,                       XK_F11,    spawn,          CMD("pactl set-sink-volume 0 -5% && pkill dwm_bar.sh && /home/archuser/Downloads/dwm-bar/dwm_bar.sh") },
 	{ MODKEY,                       XK_w,      spawn,          CMD("firefox") },
-	{ MODKEY,                       XK_F9,     spawn,          CMD("amixer -q sset Master toggle && pkill dwm_bar.sh && /home/archuser/Downloads/dwm-bar/dwm_bar.sh") },
-	{ MODKEY,                       XK_F12,    spawn,          CMD("amixer -q sset Master 5%+ && pkill dwm_bar.sh && /home/archuser/Downloads/dwm-bar/dwm_bar.sh") },
+	/*{ MODKEY,                       XK_F9,     spawn,          CMD("amixer -q sset Master toggle && pkill dwm_bar.sh && /home/archuser/Downloads/dwm-bar/dwm_bar.sh") },*/
+	{ MODKEY,                       XK_F12,    spawn,          CMD("pactl set-sink-volume 0 +5% && pkill dwm_bar.sh && /home/archuser/Downloads/dwm-bar/dwm_bar.sh") },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,             		XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
