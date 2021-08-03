@@ -80,9 +80,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_s,                      5)
 	{ MODKEY,                       XK_Left,   shiftview,      {.i = -1 } },
 	{ MODKEY,                       XK_Right,  shiftview,      {.i = +1 } },
-	{ MODKEY,                       XK_F11,    spawn,          SHCMD("pactl set-sink-volume 0 -5% && pkill dwm_bar.sh && /home/archuser/Downloads/dwm-bar/dwm_bar.sh") },
-	{ MODKEY,                       XK_F9,     spawn,          SHCMD("pactl set-sink-mute 0 toggle && pkill dwm_bar.sh && /home/archuser/Downloads/dwm-bar/dwm_bar.sh") },
-	{ MODKEY,                       XK_F12,    spawn,          SHCMD("pactl set-sink-volume 0 +5% && pkill dwm_bar.sh && /home/archuser/Downloads/dwm-bar/dwm_bar.sh") },
+	{ MODKEY,                       XK_F11,    spawn,          SHCMD("pactl set-sink-volume 0 -5% && pkill dwm_bar.sh && /home/archuser/.dwm/dwm_bar.sh") },
+	{ MODKEY,                       XK_F9,     spawn,          SHCMD("pactl set-sink-mute 0 toggle && pkill dwm_bar.sh && /home/archuser/.dwm/dwm_bar.sh") },
+	{ MODKEY,                       XK_F12,    spawn,          SHCMD("pactl set-sink-volume 0 +5% && pkill dwm_bar.sh && /home/archuser/.dwm/dwm_bar.sh") },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,               	    XK_Return, spawn,          {.v = termcmd } },
     TAGKEYS(                        XK_Return,                      1)
