@@ -100,7 +100,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
       /*{ MODKEY,                       XK_space,  setlayout,      {0} },*/
-	{ MODKEY,                       XK_space,  spawn,          SHCMD("/home/archuser/Downloads/xkb-switch/build/xkb-switch -n && pkill dwm_bar.sh && /home/archuser/Downloads/dwm-bar/dwm_bar.sh")  },
+	{ MODKEY,                       XK_space,  spawn,          SHCMD("xkb-switch -n && pkill dwm_bar.sh && /home/archuser/Downloads/dwm-bar/dwm_bar.sh")  },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
