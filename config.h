@@ -18,7 +18,7 @@ static const char col_cyan[]        = "#96e6ff"; /*#005577 default*/
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_cyan, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray1, col_cyan,  col_cyan  },
+	[SchemeSel]  = { col_white /*col_gray1*/, col_gray1,/*col_cyan*/  col_cyan  },
 };
 
 /* tagging */
@@ -34,7 +34,7 @@ static const Rule rules[] = {
 	{ "firefox",    NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "KeePassXC",  NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "Pcmanfm",  	NULL,       NULL,       1 << 2,       0,           -1 },
-    { NULL,     	"nomacs",   NULL,       NULL,         0,           -1 },
+    { NULL,     	"nomacs",   NULL,       NULL,         1,           -1 },
 };
 
 /* layout(s) */
@@ -80,9 +80,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_s,                      5)
 	{ MODKEY,                       XK_Left,   shiftview,      {.i = -1 } },
 	{ MODKEY,                       XK_Right,  shiftview,      {.i = +1 } },
-	{ MODKEY,                       XK_F11,    spawn,          SHCMD("pactl set-sink-volume 0 -5% && pkill dwm_bar.sh && /home/archuser/.dwm/dwm_bar.sh") },
-	{ MODKEY,                       XK_F9,     spawn,          SHCMD("pactl set-sink-mute 0 toggle && pkill dwm_bar.sh && /home/archuser/.dwm/dwm_bar.sh") },
-	{ MODKEY,                       XK_F12,    spawn,          SHCMD("pactl set-sink-volume 0 +5% && pkill dwm_bar.sh && /home/archuser/.dwm/dwm_bar.sh") },
+	{ MODKEY,                       XK_F11,    spawn,          SHCMD("pactl set-sink-volume 0 -5% && pkill -RTMIN+2 dwmblocks ") },
+	{ MODKEY,                       XK_F9,     spawn,          SHCMD("pactl set-sink-mute 0 toggle && pkill -RTMIN+2 dwmblocks ") },
+	{ MODKEY,                       XK_F12,    spawn,          SHCMD("pactl set-sink-volume 0 +5% && pkill -RTMIN+2 dwmblocks ") },
 	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,               	    XK_Return, spawn,          {.v = termcmd } },
     TAGKEYS(                        XK_Return,                      1)
@@ -100,7 +100,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
       /*{ MODKEY,                       XK_space,  setlayout,      {0} },*/
-	{ MODKEY,                       XK_space,  spawn,          SHCMD("xkb-switch -n && pkill dwm_bar.sh && /home/archuser/.dwm/dwm_bar.sh")  },
+	{ MODKEY,                       XK_space,  spawn,          SHCMD("xkb-switch -n && pkill -RTMIN+1 dwmblocks")  },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
